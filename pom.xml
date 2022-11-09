@@ -20,10 +20,7 @@
   </properties>
   <build>
     <pluginManagement>
-      <plugin>
-       <artifactId>maven-war-plugin</artifactId>
-       <version>3.3.1</version>
-     </plugin>
+      
       <plugins>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -33,6 +30,10 @@
       </plugins>
     </pluginManagement>
     <plugins>
+      <plugin>
+       <artifactId>maven-war-plugin</artifactId>
+       <version>3.3.1</version>
+     </plugin>
       <plugin>
         <!-- Build an executable JAR -->
         <!-- Test commit -->
