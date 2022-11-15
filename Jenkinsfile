@@ -1,5 +1,7 @@
 pipeline {
-	agent any 
+	agent {
+		label 'slave1'
+	} 
 	stages {
 		stage('Build') {
 			steps {
@@ -16,11 +18,7 @@ pipeline {
 				}
 			}
 		}
-		stage('Deliver') {
-			steps {
-				sh './scripts/deliver.sh'
-			}
-		}
+		
 	}
 
 }
