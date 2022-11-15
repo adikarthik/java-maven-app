@@ -1,6 +1,6 @@
 pipeline {
 	agent {
-		label 'master'
+label 'master'
 	}
 	tools {
         maven 'm1' 
@@ -9,6 +9,7 @@ pipeline {
 		stage('Build') {
 			steps {
 				sh 'mvn -B -DskipTests clean install'
+
 			}
 		}
 		stage('Test') {
@@ -17,10 +18,13 @@ pipeline {
 			}
 			post {
 				always {
-					junit 'target/surefire-reports/*.xml'
+
+					junit '**/target/surefire-reports/*.xml'
+
 				}
 			}
 		}
 		
 	}
+
 }
