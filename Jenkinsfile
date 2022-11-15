@@ -1,6 +1,6 @@
 pipeline {
 	agent {
-		label 'master'
+  label 'master'
 	}
 	tools {
         maven 'm1' 
@@ -17,10 +17,12 @@ pipeline {
 			}
 			post {
 				always {
+
 					junit 'target/surefire-reports/*.xml'
 				}
 			}
 		}
 		
 	}
+
 }
