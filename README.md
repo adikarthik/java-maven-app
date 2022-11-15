@@ -18,4 +18,3 @@ this is a build trigger test
 i am doing build trigger test once again 
 
 
-hello how are you 
