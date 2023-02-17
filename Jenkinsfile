@@ -1,7 +1,7 @@
 pipeline {
 	agent any
 	stages {
-	    stage ('clean up') 
+	    stage ('clean up') {
 	        steps {
 	            cleanWs()
 	        }
@@ -31,6 +31,7 @@ pipeline {
 					    junit 'target/surefire-reports/*.*xml'
 				    }
 			}
+		}
 		stage ('run') {
 			steps {
 			   
@@ -38,5 +39,6 @@ pipeline {
 			    }
 			}
 		
+		}
 	}
-
+}
