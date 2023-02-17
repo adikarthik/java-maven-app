@@ -1,24 +1,46 @@
 pipeline {
 	agent any
-	tools {
-        maven 'm1' 
-    }
 	stages {
-		stage('Build') {
+	    stage ('clean up') {
+	        steps {
+	            cleanWs()
+	        }
+	    }
+	    stage ('clone') {
 			steps {
-				sh 'mvn -B -DskipTests clean install'
+				sh 'git clone https://github.com/BinduPhalguna/java-maven-app'
 			}
+		
 		}
-		stage('Test') {
+		stage ('build') {
 			steps {
-				sh 'mvn test'
+			    
+				    sh 'mvn clean install -DskipTests'
+			    }
+			}
+		
+		}
+		stage ('test') {
+			steps {
+			  
+			        sh 'mvn test'
+			    }
 			}
 			post {
 				always {
-					junit 'target/surefire-reports/*.xml'
+				  
+					    junit 'target/surefire-reports/*.*xml'
+				    }
 				}
 			}
 		}
+		stage ('run') {
+			steps {
+			   
+			    	sh './scripts/deliver.sh'
+			    }
+			}
 		
+		}
 	}
 }
