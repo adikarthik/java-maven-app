@@ -33,7 +33,6 @@ pipeline {
 				    }
 				}
 			}
-		}
 		stage ('run') {
 			steps {
 			   
