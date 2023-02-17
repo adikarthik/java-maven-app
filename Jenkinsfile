@@ -17,7 +17,6 @@ pipeline {
 			    
 				    sh 'mvn clean install -DskipTests'
 			    }
-			}
 		
 		}
 		stage ('test') {
@@ -31,7 +30,6 @@ pipeline {
 				  
 					    junit 'target/surefire-reports/*.*xml'
 				    }
-				}
 			}
 		stage ('run') {
 			steps {
@@ -40,6 +38,5 @@ pipeline {
 			    }
 			}
 		
-		}
 	}
 }
