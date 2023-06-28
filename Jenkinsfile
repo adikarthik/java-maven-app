@@ -1,6 +1,6 @@
 pipeline {
 	agent {
-		label 'adi'
+		label 'ssh'
 	}
 	tools {
         maven 'm1' 
