@@ -1,4 +1,5 @@
-# java-maven-app
+# java-maven-app--test
+
 
 
 The repository contains a simple Java application which outputs the string
@@ -10,7 +11,9 @@ to build
 mvn clean install
 
 
-to run
+to run the application
 
 scripts/deliver.sh
+
+
 
